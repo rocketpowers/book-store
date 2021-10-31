@@ -1,0 +1,6 @@
+aprimorando jpa repositories e o conceito de persistencia
+
+
+entendimento sobre as anotations tem evoluido
+
+
