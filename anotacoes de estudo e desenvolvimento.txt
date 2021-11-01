@@ -1,6 +1,10 @@
-aprimorando jpa repositories e o conceito de persistencia
+aprimorando: 
+
+jpa repositories
+conceito de persistencia
+anotations
 
 
-entendimento sobre as anotations tem evoluido
+
 
 
