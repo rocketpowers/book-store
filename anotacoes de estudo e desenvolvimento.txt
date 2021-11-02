@@ -4,6 +4,8 @@ jpa repositories
 conceito de persistencia
 anotations
 
+massa a ideia de profiles.active...
+
 
 
 
