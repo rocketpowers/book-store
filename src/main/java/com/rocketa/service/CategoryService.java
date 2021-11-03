@@ -7,6 +7,9 @@ import org.springframework.stereotype.Service;
 
 import com.rocketa.domain.Category;
 import com.rocketa.repository.CategoryRepository;
+import com.rocketa.service.exceptions.ObjectNotFoundException;
+
+
 
 @Service
 public class CategoryService {
@@ -14,9 +17,11 @@ public class CategoryService {
 	@Autowired
 	private CategoryRepository repository;
 	
-	public Category findById(Integer id) {
-		Optional<Category>obj=repository.findById(id);
-		return obj.orElse(null);
+	public Category findById(Integer id)  {
+		Optional<Category> obj = repository.findById(id);
+		
+		return obj.orElseThrow(() -> new ObjectNotFoundException(
+				"object not find!  id: " + id + ", Tipo: " + Category.class.getName()));
 		
 	}
 	
