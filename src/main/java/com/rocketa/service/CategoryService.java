@@ -35,11 +35,19 @@ public class CategoryService {
 	}
 
 	public Category update(Integer id, CategoryDto objDto) {
-		
+
 		Category obj = findById(id);
 		obj.setName(objDto.getName());
 		obj.setDescription(objDto.getDescricao());
 		return repository.save(obj);
+	}
+
+	public void delete(Integer id) {
+		
+		findById(id);
+		repository.deleteById(id);
+		
+		
 	}
 
 }
