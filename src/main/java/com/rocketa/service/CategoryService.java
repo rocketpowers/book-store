@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rocketa.domain.Category;
+import com.rocketa.dtos.CategoryDto;
 import com.rocketa.repository.CategoryRepository;
 import com.rocketa.service.exceptions.ObjectNotFoundException;
 
@@ -27,9 +28,17 @@ public class CategoryService {
 	public List<Category> findAll() {
 		return repository.findAll();
 	}
-	
+
 	public Category create(Category obj) {
 		obj.setId(null);
+		return repository.save(obj);
+	}
+
+	public Category update(Integer id, CategoryDto objDto) {
+		
+		Category obj = findById(id);
+		obj.setName(objDto.getName());
+		obj.setDescription(objDto.getDescricao());
 		return repository.save(obj);
 	}
 
